@@ -74,7 +74,7 @@ export default function ChatPage() {
           AI Chatbot
         </CardTitle>
       </CardHeader>
-      <CardContent className="grid grid-rows-[1fr_80px] p-0">
+      <CardContent className="grid h-full grid-rows-[1fr_80px] p-0">
         <ScrollArea className="h-full max-h-[calc(100svh-180px)] px-6 py-4" ref={scrollRef}>
           <div className="flex flex-col gap-4">
             {messages.length === 0 && (

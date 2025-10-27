@@ -1,7 +1,7 @@
 # My AI Chatbot
 
-Sebuah aplikasi chatbot sederhana yang mengintegrasikan [Ollama](https://ollama.com/) sebagai backend AI, dibangun dengan Next.js, React, dan shadcn/ui.  
-Cocok untuk eksperimen, belajar, atau membuat asisten AI pribadi di lokal.
+Aplikasi chatbot sederhana yang terintegrasi dengan [Ollama Cloud](https://ollama.com/) sebagai backend AI, dibangun menggunakan Next.js, React, dan shadcn/ui.  
+Cocok untuk eksperimen, belajar, atau membuat asisten AI pribadi dengan kemudahan cloud.
 
 ## Fitur
 
@@ -13,14 +13,23 @@ Cocok untuk eksperimen, belajar, atau membuat asisten AI pribadi di lokal.
 
 - Node.js v18+
 - [pnpm](https://pnpm.io/) (atau bisa diganti dengan npm/yarn)
-- [Ollama](https://ollama.com/) sudah terinstall & model AI sudah di-pull (misal: `ollama pull gpt-oss:120b-cloud`)
-- (Opsional) Model AI lain yang kompatibel dengan Ollama
+- Akun Ollama Cloud & API Key aktif
+- Model AI yang tersedia di Ollama Cloud (misal: `gpt-oss:120b-cloud`)
+
+## Konfigurasi Environment
+
+1. **Buat file `.env` di root project:**
+   ```
+   OLLAMA_API_KEY=isi_dengan_api_key_ollama_cloud_anda
+   ```
+
+2. **Jangan commit file `.env` ke repository publik!**
 
 ## Cara Menjalankan
 
 1. **Clone repository ini:**
    ```bash
-   git clone https://github.com/username/my-ai-chatbot.git
+   git clone https://github.com/ibnu001/my-ai-chatbot.git
    cd my-ai-chatbot
    ```
 
@@ -33,10 +42,7 @@ Cocok untuk eksperimen, belajar, atau membuat asisten AI pribadi di lokal.
    # yarn install
    ```
 
-3. **Pastikan Ollama sudah berjalan di background:**
-   ```bash
-   ollama serve
-   ```
+3. **Pastikan file `.env` sudah terisi OLLAMA_API_KEY.**
 
 4. **Jalankan aplikasi:**
    ```bash
@@ -62,11 +68,12 @@ dan ubah bagian:
 ```ts
 model: "gpt-oss:120b-cloud",
 ```
-menjadi model yang kamu inginkan.
+menjadi model yang kamu inginkan (pastikan model tersedia di Ollama Cloud).
 
 ## Catatan
 
-- Pastikan Ollama berjalan di mesin yang sama dengan aplikasi ini.
+- Semua request AI akan diarahkan ke Ollama Cloud, bukan server lokal.
+- Pastikan API key Ollama Cloud kamu aktif dan memiliki kuota.
 - Untuk penggunaan di production, pastikan keamanan API dan rate limit sudah diatur.
 
 ---

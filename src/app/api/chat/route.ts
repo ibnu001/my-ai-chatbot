@@ -1,12 +1,10 @@
+import { getOllamaClient } from "@/lib/ai/ollama";
 import { NextRequest } from "next/server";
-import { Ollama } from "ollama";
-
-// export const runtime = "edge"; // HAPUS atau KOMEN baris ini
 
 export async function POST(req: NextRequest) {
   const { messages } = await req.json();
 
-  const ollama = new Ollama();
+  const ollama = getOllamaClient();
 
   const response = await ollama.chat({
     model: "gpt-oss:120b-cloud",
