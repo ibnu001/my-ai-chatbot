@@ -41,6 +41,17 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+
+  --color-primary-ct: #137fec;
+  --color-light-ct: #f6f7f8;
+  --color-dark-ct: #121212;
+  --color-surface-dark-ct: #1E1E1E;
+  --color-border-dark-ct: #2A2A2A;
+  --color-primary-light-ct: #222222;
+  --color-secondary-light-ct: #666666;
+  --color-primary-dark-ct: #E0E0E0;
+  --color-secondary-dark-ct: #A0A0A0;
+
 }
 
 :root {
@@ -113,10 +124,39 @@
 }
 
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
   body {
-    @apply bg-background text-foreground;
+    @apply font-[var(--font-display-ct)] bg-[var(--background-light-ct)] text-[var(--text-primary-dark-ct)];
   }
+  .dark body {
+    @apply bg-[var(--background-dark-ct)] text-[var(--text-primary-dark-ct)];
+  }
+}
+
+.rounded-ct {
+  border-radius: var(--radius-ct);
+}
+.rounded-lg-ct {
+  border-radius: var(--radius-lg-ct);
+}
+.rounded-xl-ct {
+  border-radius: var(--radius-xl-ct);
+}
+.rounded-full-ct {
+  border-radius: var(--radius-full-ct);
+}
+
+ul {
+  margin-left: 20px;
+}
+li {
+  margin-bottom: 10px;
+  text-align: justify;
+}
+p {
+  text-align: justify;
+}
+th {
+  text-align: left;
+  border-bottom: 1px solid var(--color-primary-light-ct);
+  padding-bottom: 10px; 
 }
