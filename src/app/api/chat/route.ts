@@ -1,9 +1,10 @@
+export const runtime = "nodejs";
+
 import { getOllamaClient } from "@/lib/ai/ollama";
 import { NextRequest } from "next/server";
 
 export async function POST(req: NextRequest) {
   const { messages } = await req.json();
-
   const ollama = getOllamaClient();
 
   const response = await ollama.chat({
@@ -25,7 +26,6 @@ export async function POST(req: NextRequest) {
   return new Response(stream, {
     headers: {
       "Content-Type": "text/plain; charset=utf-8",
-      "Transfer-Encoding": "chunked",
     },
   });
 }
