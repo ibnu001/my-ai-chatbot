@@ -158,5 +158,45 @@ p {
 th {
   text-align: left;
   border-bottom: 1px solid var(--color-primary-light-ct);
-  padding-bottom: 10px; 
+  padding: 8px; 
+}
+td {
+  padding: 8px;
+  vertical-align: top;
+}
+
+td > ul {
+  margin-left: 0px;
+}
+
+/* Style for inline code */
+code {
+  background: var(--color-surface-dark-ct, #23272e);
+  color: var(--color-primary-dark-ct, #e0e0e0);
+  font-family: var(--font-mono, 'Fira Mono', 'Menlo', 'Monaco', 'Consolas', monospace);
+  font-size: 0.95em;
+  border-radius: 0.375rem;
+  padding: 0.18em 0.45em;
+  margin: 0 2px;
+  word-break: break-word;
+}
+
+/* Style for code block */
+pre code {
+  display: block;
+  background: var(--color-surface-dark-ct, #23272e);
+  color: var(--color-primary-dark-ct, #e0e0e0);
+  padding: 1em;
+  border-radius: 0.5rem;
+  font-size: 0.97em;
+  overflow-x: auto;
+  line-height: 1.6;
+}
+
+/* Optional: Light mode override */
+@media (prefers-color-scheme: light) {
+  code, pre code {
+    background: var(--color-light-ct, #f6f7f8);
+    color: var(--color-primary-ct, #137fec);
+  }
 }
